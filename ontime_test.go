@@ -1,6 +1,6 @@
 // Test cases for OnTime.
 
-package ontime
+package main
 
 import (
 	"testing"

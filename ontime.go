@@ -2,7 +2,7 @@
 //   and extracting interesting information regarding events that people
 //   historically did calendar stuff with.
 
-package ontime
+package main
 
 import (
 	"fmt"
