@@ -19,14 +19,20 @@ func main() {
 	outTime := flag.String("ot", "std", "Output time clock. standard, binary,"+
 		"or metric.")
 	outForm := flag.String("of", " ", "Output time format.")
+	inTm := flag.String("it", "", "Input time.")
 	inForm := flag.String("if", " ", "Input time format.")
 	flag.Parse()
 
-	inTime = flag.Arg(0)
+	inTime = *inTm
 	outFmt = *outForm
 	inFmt = *inForm
 
-	now = time.Now()
+	if inTime != "" {
+		now, _ = time.Parse(inFmt, inTime)
+	} else {
+		now = time.Now()
+	}
+
 	switch *outTime {
 	case "std", "standard", "s":
 		fmt.Printf("%02d:%02d", now.Hour(), now.Minute())
