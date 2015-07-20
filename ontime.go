@@ -2,10 +2,10 @@
 //   and extracting interesting information regarding events that people
 //   historically did calendar stuff with.
 
-package main
+package ontime
 
 import (
-	"flag"
+//	"flag"
 	"fmt"
 	"time"
 )
@@ -15,6 +15,7 @@ var outFmt string
 var inFmt string
 var inTime string
 
+/*
 func main() {
 	outTime := flag.String("ot", "std", "Output time clock. standard, binary,"+
 		"or metric.")
@@ -41,7 +42,7 @@ func main() {
 	case "bin", "b", "binary", "hex":
 		PrintHexTime()
 	}
-}
+}*/
 
 func stdToday() int64 {
 	return int64((now.Second()+60*now.Minute()+3600*now.Hour())*1000000000 + now.Nanosecond())
